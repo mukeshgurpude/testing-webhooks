@@ -5,4 +5,4 @@ from django.views import View
 
 class HomeView(View):
     def get(self, request):
-        return HttpResponse("Hello", content_type='text/plain')
+        return HttpResponse("Server is UP", content_type='text/plain')

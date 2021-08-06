@@ -10,4 +10,5 @@ class HookView(View):
     def post(self, request):
         if request.headers.get('X-GitHub-Event'):
             return HttpResponse('pong', content_type='text/plain')
+        print(request.POST)
         return HttpResponse('Ok', content_type='text/plain')
