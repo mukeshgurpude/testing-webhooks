@@ -9,7 +9,7 @@ from django.conf import settings
 @method_decorator(csrf_exempt, 'dispatch')
 class HookView(View):
     def post(self, request):
-        if request.headers.get('X-GitHub-Event'):
+        if request.headers.get('X-GitHub-Event') == 'ping':
             return HttpResponse('pong', content_type='text/plain')
         with open('data.json', 'w') as file:
             file.write(request.body.decode('utf-8'))
